@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_pinecone import Pinecone as LangChainPinecone
-from langchain_community.vectorstores import Pinecone as VectorStorePinecone
+from langchain_pinecone import Pinecone as VectorStorePinecone
 from langchain.chains.retrieval_qa.base import RetrievalQA
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_core.documents import Document
