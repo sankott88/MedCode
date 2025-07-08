@@ -1,0 +1,32 @@
+# install these python packages
+
+streamlit
+langchain
+langchain-openai
+langchain-pinecone
+openai
+pinecone-client
+python-dotenv
+tiktoken
+unstructured
+pypdf
+lxml
+xmltodict
+pandas
+
+# Add your real API keys in a local .env file
+ 
+# OpenAI API Key
+OPENAI_API_KEY=your-openai-api-key-here
+ 
+# Pinecone API Key
+PINECONE_API_KEY=your-pinecone-api-key-here
+ 
+# Pinecone Environment (e.g., us-east-1)
+PINECONE_ENVIRONMENT=your-pinecone-environment
+ 
+# Pinecone Index Name
+PINECONE_INDEX_NAME=your-pinecone-index-name
+ 
+# Optional: OpenAI Embedding Model (default is text-embedding-3-small)
+OPENAI_EMBEDDING_MODEL=your-embedding-model
