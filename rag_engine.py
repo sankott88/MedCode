@@ -1,10 +1,14 @@
-from langchain_openai import ChatOpenAI
-from langchain.chains.retrieval_qa.base import RetrievalQA
-from langchain.prompts import PromptTemplate
-from langchain_pinecone import PineconeVectorStore
-from langchain_openai import OpenAIEmbeddings
-from dotenv import load_dotenv
 import os
+from dotenv import load_dotenv
+
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+from langchain_pinecone import Pinecone as LangChainPinecone
+from langchain_community.vectorstores import Pinecone as VectorStorePinecone
+from langchain.chains.retrieval_qa.base import RetrievalQA
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_core.documents import Document
+from langchain.prompts import PromptTemplate
+from langchain_openai import OpenAIEmbeddings
 
 load_dotenv()
 
@@ -27,7 +31,7 @@ Question: {question}
 """)
 
 #Load vector store
-vector_store = PineconeVectorStore.from_existing_index(
+vector_store = VectorStorePinecone.from_existing_index(
     index_name="medassist-index",
     embedding=embedding_model
 )
